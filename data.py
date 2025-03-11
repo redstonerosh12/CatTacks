@@ -26,13 +26,23 @@ GLineTime = [t(6,57), t(8,20), t(9,28), t(10,36), t(11,44),
 
 GLinePlace = ["amtrak", "downtown"]
 
+RouteUCTime = [t(6,47), t(7,27), t(8,7),
+               t(8,47), t(9,27), t(10,7),
+               t(10,47), t(11,27), t(12,7),
+               t(12,47), t(13,27), t(14,7),
+               t(14,47), t(15,27), t(16,7),
+               t(16,47), t(17,27), t(18,7),
+               t(18,47), t(19,27)]
+
+RouteUCPlace = ["target", "mercedmall", "amtrak", "downtown"]
 
 
 BobcatExpress = Bus.Bus("Bobcat Express", BobcatExpressTime, BobcatExpressPlace)
 C2 = Bus.Bus("C2", C2Time, C2Place)
 GLine = Bus.Bus("GLine", GLineTime, GLinePlace)
+RouteUC = Bus.Bus("Route UC", RouteUCTime, RouteUCPlace)
 
-Buses = [BobcatExpress, C2, GLine]
+Buses = [BobcatExpress, C2, GLine, RouteUC]
 
 if __name__ == '__main__':
     print("Welcome to data, data is not an executable")

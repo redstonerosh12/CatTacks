@@ -9,7 +9,9 @@ def main(now=datetime.datetime.now().time().replace(second=0, microsecond=0), is
     availableTime = False
     for bus in data.Buses:
         if place in bus.destinations:
-            nextBus = next((t for t in bus.timings if t >= now))
+            nextBus = next((t for t in bus.timings if t >= now), None)
+            if not nextBus:
+                continue
             if isPreTime:
                 print(f"Leaving at time {now},", end=" ")
             print(f"For bus {bus.name}, The next bus is at: {nextBus}")
